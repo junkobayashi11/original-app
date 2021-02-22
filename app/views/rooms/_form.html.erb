@@ -1,0 +1,30 @@
+<%= form_with model: room, local: true do |f| %>
+
+  <div class="field">
+    <%= f.label :room_name, "ルーム名" %><br>
+    <%= f.text_field :room_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :host_date, "主催日と日時" %><br>
+    <%= f.datetime_select :host_date, class: 'form-control'%>
+  </div>
+
+  <div class="field">
+    <%= f.label :prefecture_id, "主催地" %><br />
+    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :municipalities, "主催地(市町村)" %><br />
+    <%= f.text_field :municipalities, autofocus: true, autocomplete: "municipalities" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+
+  <div class="image-center">
+    <img src="/assets/9cf9abf6.png" class="move-image animation">
+  </div>
+<% end %>

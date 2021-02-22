@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OriginalApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="footer-fixed">
+      <header class="header">
+        <div class="inner">
+          <div class="nav">
+            <div class="nav_left">
+              <%= link_to image_tag("/assets/soccer-league-header-or-banner-design-with-soccer-ball_1302-18062.jpg", class: :logo), root_path %>
+            </div>
+            <% if user_signed_in? %>
+              <div class="nav_right">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav_btn %>
+                <%= link_to "メンバー募集", new_room_path, class: :nav_btn %>
+              </div>
+            <% else %>
+              <div class="nav_right">
+                <%= link_to "ログイン", user_session_path, class: :nav_btn %>
+                <%= link_to "新規登録", new_user_registration_path, class: :nav_btn %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </header>
+      <%= yield %>
+      <footer class="footer">
+        <img class="content" src="/assets/ct_ec_default-1.png">
+      </footer>
+    </div>
+  </body>
+</html>
