@@ -1,0 +1,24 @@
+.room-user-name{
+  text-align: center;
+  font-size: 25px;
+  margin: 60px;
+}
+
+.detail-table{
+  width: 100%;
+}
+
+.detail-item{
+  width: 20%;
+  background-color: #eee;
+  border: 1px #dedede solid;
+  font-size: 14px;
+  text-align: center;
+}
+
+.detail-value{
+  width: 80%;
+  padding: 20px;
+  border: 1px #dedede solid;
+  font-size: 14px;
+}

@@ -1,0 +1,190 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* メンバー募集画面 */
+.animation{
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 10s;
+}
+
+.image-center{
+    text-align: center;
+}
+
+.move-image{
+    animation-name: anim_h;
+}
+
+
+@keyframes anim_h {
+    0% {
+        transform: translateX(10vw);
+    }
+    100% {
+        transform: translateX(-10vw);
+    }
+}
+
+/* 投稿一覧表示機能 */
+
+
+.inner {
+    width: 1024px;
+    margin: 0 auto;
+}
+.main-title{
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+}
+
+.room_wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.room{
+    width: calc((100% - 100px) / 2);
+    margin-bottom: 60px;
+    border: 1px blue solid;
+}
+
+.room-name{
+    font-size: 18px;
+    padding:10px;
+}
+
+.room-none{
+    text-decoration: none;
+}
+
+.room-information{
+    font-size: 16px;
+    padding-bottom: 10px;
+}
+
+.room-place{
+    font-size: 16px;
+}
+
+.room-host-date{
+    font-size: 16px;
+    padding: 10px;
+}
+
+.more_lists{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.more_list{
+    font-size: 18px;
+    display: block;
+    padding: 0px 10px 10px 10px;
+    color: black;
+}

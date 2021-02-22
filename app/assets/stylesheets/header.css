@@ -1,0 +1,56 @@
+/* ヘッター */
+
+.footer-fixed{
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+}
+
+.header{
+  background-color: #f1f8fe;
+  padding: 20px, 0px;
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 250px;
+}
+
+.nav_right{
+  display: flex;
+  align-items: center;
+}
+.nav_btn{
+  display: inline-block;
+  font-size: 15px;
+  color: black;
+  margin-right: 30px;
+  text-decoration: none;
+  border: 1px #87CEFA solid;
+  padding: 10px;
+  user-select: none;
+  transition: 0.5s;
+}
+
+.nav_btn:hover{
+  background: #87CEFA;
+}
+
+/* フッター */
+.footer {
+  padding: 10px 0px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.content{
+  height: 50px; 
+  width: 100%;
+}
