@@ -5,5 +5,5 @@ class Room < ApplicationRecord
   validates :room_name, :municipalities,presence: true
   validates :prefecture_id, numericality: { other_than: 1, message: "Select"}
   belongs_to :user
-  has_many :commnets
+  has_many :comments
 end

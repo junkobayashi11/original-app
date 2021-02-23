@@ -19,7 +19,7 @@
           <div class="more_select">
             <ul class="more_lists">
               <li>
-                <%= link_to '詳細', "#", class: :more_list %>
+                <%= link_to '詳細', room_path(room.id), class: :more_list %>
               </li>
               <% if user_signed_in? && current_user.id == room.user_id %>
                 <li>

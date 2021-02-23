@@ -26,6 +26,12 @@ class RoomsController < ApplicationController
     @room = Room.find(params[:id])
   end
 
+  def show
+    @room = Room.find(params[:id])
+    @comment = Comment.new
+    @comments = @room.comments.includes(:user)
+  end
+
   def update
     @room = Room.find(params[:id])
     if @room.update(room_params)
