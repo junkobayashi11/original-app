@@ -18,15 +18,17 @@
         </div>
           <div class="more_select">
             <ul class="more_lists">
-              <li>
-                <%= link_to '詳細', room_path(room.id), class: :more_list %>
-              </li>
-              <% if user_signed_in? && current_user.id == room.user_id %>
+              <% if user_signed_in? %>
+                <% if current_user.id == room.user_id %>
+                  <li>
+                    <%= link_to '編集', edit_room_path(room.id), class: :more_list %>
+                  </li>
+                  <li>
+                    <%= link_to '削除', room_path(room.id), method: :delete, class: :more_list %>
+                  </li>
+                <% end %>
                 <li>
-                  <%= link_to '編集', edit_room_path(room.id), class: :more_list %>
-                </li>
-                <li>
-                  <%= link_to '削除', room_path(room.id), method: :delete, class: :more_list %>
+                  <%= link_to 'コメント', room_path(room.id), class: :more_list %>
                 </li>
               <% end %>
             </ul>
