@@ -33,6 +33,10 @@ class RoomsController < ApplicationController
     @comments = @room.comments.includes(:user)
   end
 
+  def search
+    @rooms = Room.search(params[:keyword])
+  end
+
   def update
     @room = Room.find(params[:id])
     if @room.update(room_params)
