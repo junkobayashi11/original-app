@@ -1,0 +1,13 @@
+<ul class="more_lists">
+  <% if user_signed_in? %>
+    <% if current_user.id == room.user_id %>
+      <li class="more_list">
+        <%= link_to '編集', edit_room_path(room.id), class: :more_list %>
+        <%= link_to '削除', room_path(room.id), method: :delete, class: :more_list %>
+      </li>
+    <% end %>
+    <li class="more_list">
+      <%= link_to 'コメント', room_path(room.id), class: :more_list %>
+    </li>
+  <% end %>
+</ul>

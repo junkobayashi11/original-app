@@ -1,47 +1,49 @@
-<h2 class="sign-up-title">新規登録</h2>
+ <div class="background-image"> 
+  <h2 class="sign-up-title">新規登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :name, "ユーザー名" %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
-  </div>
+    <div class="field">
+      <%= f.label :name, "ユーザー名" %><br />
+      <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %><br>
-    <em>(半角英数6文字以上)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "password" %>
-  </div>
+    <div class="field">
+      <%= f.label :password %>
+      <% if @minimum_password_length %><br>
+      <em>(半角英数6文字以上)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "password" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation,"password (再入力)" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "password_confirmation" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation,"password (再入力)" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "password_confirmation" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :phone_number, "電話番号" %><span class="any">(任意)</span><br />
-    <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
-  </div>
+    <div class="field">
+      <%= f.label :phone_number, "電話番号" %><span class="any">(任意)</span><br />
+      <%= f.text_field :phone_number, autofocus: true, autocomplete: "phone_number" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :profile, "プロフィール" %><br />
-    <%= f.text_area :profile, autofocus: true, autocomplete: "profile" %>
-  </div>
+    <div class="field">
+      <%= f.label :profile, "プロフィール" %><br />
+      <%= f.text_area :profile, autofocus: true, autocomplete: "profile" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :prefecture_id, "都道府県" %><br />
-    <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
-  </div>
+    <div class="field">
+      <%= f.label :prefecture_id, "都道府県" %><br />
+      <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"prefecture"}) %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "完了", class: :"sign-btn" %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.submit "完了", class: :"sign-btn" %>
+    </div>
+  <% end %>
+</div>

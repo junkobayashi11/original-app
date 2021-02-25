@@ -1,5 +1,8 @@
 <h1 class="main-title">ルーム一覧</h1>
-
+<%= form_with(url: search_rooms_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
 <div class="inner">
   <div class="room_wrapper">
     <% @rooms.each do |room| %>
@@ -7,32 +10,16 @@
         <div class="room-name">
           主催者: <%= link_to room.user.name, user_path(room.user.id), class: "room-none" %>
         </div>
-        <div class="room-information">
+        <div class="room-name">
           ルーム名: <%= room.room_name %>
         </div>
-        <div class="room-place">
+        <div class="room-name">
           主催場所: <%= room.prefecture.name %>、<%= room.municipalities %>
         </div>
         <div class="room-host-date">
           集合日時: <%= room.host_date.strftime("%Y年%-m月%-d日 %-H時%-M分") %>
         </div>
-          <div class="more_select">
-            <ul class="more_lists">
-              <% if user_signed_in? %>
-                <% if current_user.id == room.user_id %>
-                  <li>
-                    <%= link_to '編集', edit_room_path(room.id), class: :more_list %>
-                  </li>
-                  <li>
-                    <%= link_to '削除', room_path(room.id), method: :delete, class: :more_list %>
-                  </li>
-                <% end %>
-                <li>
-                  <%= link_to 'コメント', room_path(room.id), class: :more_list %>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+        <%= render partial: "pull", locals: { room: room } %>
       </div>
     <% end %>
   </div>

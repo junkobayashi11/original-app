@@ -1,20 +1,36 @@
-<div class="room-title-name">ルーム名
-  <%= @room.room_name %>
-</div>
-<div class="comments">
-  <div class="comment-title">
-  <% @comments.each do |comment| %>
-    <p>
-      <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %></strong>
-      <%= comment.text %>
-      <%= l comment.created_at %>
-    </p>
-  <% end %>
+<div class="footer-fixed">
+  <div class="inner">
+    <div class="comment-image">
+      <div class="room-title-name">ルーム名
+        <%= @room.room_name %>
+      </div>
+      <div class="comments" id="comment_btn">
+        <% @comments.each do |comment| %>
+          <% if comment.user_id == current_user.id %>
+            <div class="right-comment" data-id=<%= comment.id %>>
+              <%= link_to " ","/users/#{comment.user_id}" %>
+              <div class="comment-chat">
+                <%= comment.text %>
+                <%= l comment.created_at %>
+              </div>
+            </div>
+          <% else %>
+            <div class="left-comment">
+              <%= link_to comment.user.name, "/users/#{comment.user_id}" %>
+              <div class="comment-chat">
+                <%= comment.text %>
+                <%= l comment.created_at %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+        <%= form_with model: [@room, @comment], class: 'comment-form', local: true do |f| %>
+          <div class="comment-from">
+              <%= f.text_field :text, class: 'form-message', placeholder: 'コメントする' %>
+              <%= f.submit '送信',id: "submit_btn", class: 'form-submit' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
-<%= form_with model: [@room, @comment], class: 'comment-form', local: true do |f| %>
-  <div class="comment-from">
-    <%= f.text_field :text, class: 'form-message', placeholder: 'コメントする' %>
-    <%= f.submit '送信', class: 'form-submit' %>
-  </div>
-<% end %>
