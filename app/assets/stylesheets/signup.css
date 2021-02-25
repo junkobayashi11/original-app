@@ -1,3 +1,9 @@
+.background-image{
+background-image: url(1769812281-metalist_stadium_euro_football-1920x1080-6wn-960x600-MM-100);
+background-color:rgba(255,255,255,0.5);
+background-blend-mode: color-burn;
+height: 100vh;
+}
 #error_explanation{
   text-align: center;
   color: red;

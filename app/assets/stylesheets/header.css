@@ -1,14 +1,15 @@
 /* ヘッター */
 
 .footer-fixed{
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 60px;
-  box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px;
+    box-sizing: border-box;
 }
 
 .header{
   background-color: #f1f8fe;
+  width: 100vw;
   padding: 20px, 0px;
 }
 
@@ -43,14 +44,19 @@
 }
 
 /* フッター */
+
 .footer {
   padding: 10px 0px;
   position: absolute;
   bottom: 0;
   width: 100%;
+  background-color: cornsilk;
 }
 
 .content{
+  padding-top: 15px;
+  text-align: center;
+  font-size: 18px;
   height: 50px; 
   width: 100%;
 }
