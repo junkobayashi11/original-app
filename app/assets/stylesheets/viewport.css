@@ -1,0 +1,70 @@
+/* タブレット対応 */
+@media (max-width: 1024px){
+  .inner {
+    width: 90%;
+    margin:0 auto;
+    font-size: 10px;
+  }
+  .form-message {
+    width: 400px;
+  }
+
+  .room-name{
+    font-size: 16px;
+  }
+  .room-host-date{
+    font-size: 16px;
+  }
+  .more_list{
+    font-size: 16px;
+  }
+  .right-comment{
+    font-size: 16px;
+  }
+  .left-comment{
+    font-size: 16px;
+  }
+  .form-message{
+    width: 800px;
+  }
+  .search-btn{
+    width: 10%;
+  }
+
+/* スマホ対応 */
+}
+@media (max-width: 599px){
+  .inner {
+    width: 90%;
+    margin:0 auto;
+    font-size: 10px;
+  }
+  .nav_right{
+    width: 30%;
+  }
+  .form-message {
+    width: 350px;
+  }
+  .room{
+    width: 100%;
+  }
+
+  .room-name{
+    font-size: 14px;
+  }
+  .more_list{
+    font-size: 14px;
+  }
+  .room-host-date{
+    font-size: 12px;
+  }
+  .right-comment{
+    font-size: 14px;
+  }
+  .left-comment{
+    font-size: 14px;
+  }
+  .search-btn{
+    width: 10%;
+  }
+}
