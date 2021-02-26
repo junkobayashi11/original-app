@@ -1,4 +1,5 @@
 class RoomsController < ApplicationController
+  before_action :set_one, only: [:edit, :show, :update]
 
   def index
     @rooms = Room.all.order(created_at: "DESC")
@@ -24,11 +25,9 @@ class RoomsController < ApplicationController
   end
 
   def edit
-    @room = Room.find(params[:id])
   end
 
   def show
-    @room = Room.find(params[:id])
     @comment = Comment.new
     @comments = @room.comments.includes(:user)
   end
@@ -38,7 +37,6 @@ class RoomsController < ApplicationController
   end
 
   def update
-    @room = Room.find(params[:id])
     if @room.update(room_params)
       redirect_to action: :index
     else
@@ -49,5 +47,9 @@ class RoomsController < ApplicationController
   private
   def room_params
     params.require(:room).permit(:room_name, :prefecture_id, :host_date, :municipalities).merge(user_id: current_user.id)
+  end
+
+  def set_one
+    @room = Room.find(params[:id])
   end
 end

@@ -1,26 +1,28 @@
-<h1 class="main-title">ルーム一覧</h1>
-<%= form_with(url: search_rooms_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-<div class="inner">
-  <div class="room_wrapper">
-    <% @rooms.each do |room| %>
-      <div class="room">
-        <div class="room-name">
-          主催者: <%= link_to room.user.name, user_path(room.user.id), class: "room-none" %>
+<div class="main-wrappers">
+  <h1 class="main-title">ルーム一覧</h1>
+  <%= form_with(url: search_rooms_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
+  <% end %>
+  <div class="inner">
+    <div class="room_wrapper">
+      <% @rooms.each do |room| %>
+        <div class="room">
+          <div class="room-name">
+            主催者: <%= link_to room.user.name, user_path(room.user.id), class: "room-none" %>
+          </div>
+          <div class="room-name">
+            ルーム名: <%= room.room_name %>
+          </div>
+          <div class="room-name">
+            主催場所: <%= room.prefecture.name %>、<%= room.municipalities %>
+          </div>
+          <div class="room-host-date">
+            集合日時: <%= room.host_date.strftime("%Y年%-m月%-d日 %-H時%-M分") %>
+          </div>
+          <%= render partial: "pull", locals: { room: room } %>
         </div>
-        <div class="room-name">
-          ルーム名: <%= room.room_name %>
-        </div>
-        <div class="room-name">
-          主催場所: <%= room.prefecture.name %>、<%= room.municipalities %>
-        </div>
-        <div class="room-host-date">
-          集合日時: <%= room.host_date.strftime("%Y年%-m月%-d日 %-H時%-M分") %>
-        </div>
-        <%= render partial: "pull", locals: { room: room } %>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

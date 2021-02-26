@@ -7,9 +7,10 @@
       <div class="comments" id="comment_btn">
         <% @comments.each do |comment| %>
           <% if comment.user_id == current_user.id %>
-            <div class="right-comment" data-id=<%= comment.id %>>
+            <div class="right-comment">
               <%= link_to " ","/users/#{comment.user_id}" %>
               <div class="comment-chat">
+                <%= link_to image_tag("ごみ箱のフリーアイコン.png"), room_comment_path(comment.id), method: :delete, class: "hidden-comment" %>
                 <%= comment.text %>
                 <%= l comment.created_at %>
               </div>
@@ -26,7 +27,7 @@
         <% end %>
         <%= form_with model: [@room, @comment], class: 'comment-form', local: true do |f| %>
           <div class="comment-from">
-              <%= f.text_field :text, class: 'form-message', placeholder: 'コメントする' %>
+              <%= f.text_field :text, autofocus: true, class: 'form-message', placeholder: 'コメントする' %>
               <%= f.submit '送信',id: "submit_btn", class: 'form-submit' %>
           </div>
         <% end %>

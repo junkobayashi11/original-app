@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'rooms#index'
   resources :users, only: :show
   resources :rooms do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
     collection do
       get 'search'
     end
