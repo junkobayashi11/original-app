@@ -1,3 +1,7 @@
+.user-wrapper{
+  height: 700px;
+  background: radial-gradient(circle at center, rgba(166,0,0,0.7) 0%,rgb(216, 150, 111) 20%,rgb(245, 247, 248) 18%,rgb(255, 255, 255) 40%);
+}
 .room-user-name{
   text-align: center;
   font-size: 25px;

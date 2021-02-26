@@ -102,6 +102,10 @@ input, select {
 }
 
 /* メンバー募集画面 */
+
+.main{
+    background-color: #DDFFDD;
+}
 .animation{
     animation-timing-function: ease-in;
     animation-iteration-count: infinite;
@@ -128,6 +132,14 @@ input, select {
 }
 
 /* 投稿一覧表示機能 */
+
+.main-wrappers{
+    background-image: url(4080074043-kabekin4-5mX-1600x1200-MM-100.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
 .inner {
     width: 1024px;
     margin: 0 auto;
@@ -160,35 +172,39 @@ input, select {
 .room{
     width: calc((100% - 100px) / 2);
     margin-bottom: 60px;
-    border: 1px blue solid;
+    border: 1px white solid;
     margin-top: 50px;
 }
 
 .room-name{
     font-size: 20px;
     padding:10px;
+    color: white;
 
 }
 .room-host-date{
     font-size: 20px;
     padding: 10px 0 10px 0;
+    color: white;
 
 }
 
 .room-none{
     text-decoration: none;
+    color: white;
 }
 
 .more_lists{
     display: flex;
     list-style: none;
     justify-content: center;
+    color: white;
 }
 
 .more_list{
     font-size: 18px;
     padding: 0px 10px 10px 10px;
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
@@ -237,6 +253,7 @@ input, select {
 .right-comment{
     text-align: right;
     margin-right: 20px;
+    cursor :pointer;
 }
 
 .comment-chat{
