@@ -13,8 +13,4 @@ class User < ApplicationRecord
 
   has_many :rooms
   has_many :comments
-
-  def liked_by?(room_id)
-    Like.where(room_id: room_id).exists?
-  end
 end

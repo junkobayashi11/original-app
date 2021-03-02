@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
-  before_action :set_one, only: %i[edit show update]
+  before_action :authenticate_user!, except: :index
+  before_action :set_one, only: %i[edit show update destroy]
+  before_action :set_transition, only: [:edit, :update, :destroy]
 
   def index
     @rooms = Room.all.order(created_at: 'DESC')
@@ -53,5 +55,11 @@ class RoomsController < ApplicationController
 
   def set_one
     @room = Room.find(params[:id])
+  end
+
+  def set_transition
+    unless current_user.id == @room.user_id
+      redirect_to action: :index
+    end
   end
 end
