@@ -59,3 +59,6 @@ gem 'rails-i18n'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'font-awesome-sass'
 gem 'jquery-rails'
+gem 'rspec-rails', '~>4.0.0'
+gem 'factory_bot_rails'
+gem 'faker'
