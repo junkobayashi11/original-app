@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  
   def create
     room = Room.find(params[:room_id])
     @comment = room.comments.new(comment_params)
