@@ -33,7 +33,8 @@
 - has_many :comments
 - belongs_to :user
 
-## comments
+
+## comments テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
