@@ -24,7 +24,8 @@ class RoomsController < ApplicationController
     redirect_to action: :index
   end
 
-  def edit; end
+  def edit
+  end
 
   def show
     @comment = Comment.new
