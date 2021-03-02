@@ -1,8 +1,8 @@
 class RoomsController < ApplicationController
-  before_action :set_one, only: [:edit, :show, :update]
+  before_action :set_one, only: %i[edit show update]
 
   def index
-    @rooms = Room.all.order(created_at: "DESC")
+    @rooms = Room.all.order(created_at: 'DESC')
   end
 
   def new
@@ -24,8 +24,7 @@ class RoomsController < ApplicationController
     redirect_to action: :index
   end
 
-  def edit
-  end
+  def edit; end
 
   def show
     @comment = Comment.new
@@ -45,8 +44,10 @@ class RoomsController < ApplicationController
   end
 
   private
+
   def room_params
-    params.require(:room).permit(:room_name, :prefecture_id, :host_date, :municipalities).merge(user_id: current_user.id)
+    params.require(:room).permit(:room_name, :prefecture_id, :host_date,
+                                 :municipalities).merge(user_id: current_user.id)
   end
 
   def set_one

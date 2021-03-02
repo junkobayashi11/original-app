@@ -3,10 +3,9 @@ Rails.application.routes.draw do
   root to: 'rooms#index'
   resources :users, only: :show
   resources :rooms do
-    resources :comments, only: [:create, :destroy]
+    resources :comments, only: %i[create destroy]
     collection do
       get 'search'
     end
   end
 end
- 

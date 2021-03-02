@@ -1,7 +1,7 @@
 <div class="main-wrappers">
   <h1 class="main-title">ルーム一覧</h1>
   <%= form_with(url: search_rooms_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+    <%= form.text_field :keyword, placeholder: "ルームを検索する", class: "search-input" %>
     <%= form.submit "検索", class: "search-btn" %>
   <% end %>
   <div class="inner">
