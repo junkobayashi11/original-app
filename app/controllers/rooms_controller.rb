@@ -1,5 +1,5 @@
 class RoomsController < ApplicationController
-  before_action :authenticate_user!, except: :index
+  before_action :authenticate_user!, except: [:index, :search]
   before_action :set_one, only: %i[edit show update destroy]
   before_action :set_transition, only: [:edit, :update, :destroy]
 
